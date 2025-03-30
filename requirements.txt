@@ -1,5 +1,8 @@
 opencv-python-headless
 scikit-image
 opencv-python
-os
 base64
+torch
+numpy
+pillow
+streamlit

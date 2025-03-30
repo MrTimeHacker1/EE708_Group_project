@@ -5,5 +5,4 @@ pybase64
 torch
 numpy
 pillow
-streamlit
 torchvision

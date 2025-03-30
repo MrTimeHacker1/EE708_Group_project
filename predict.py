@@ -72,24 +72,17 @@ def extract_orb_features(image, max_features=100):
     return descriptors.flatten()[:max_features * 32]
 
 # Preprocess OpenCV image
-# Improved Preprocessing Function
 def preprocess_cv2_image(image):
-    # Ensure the image is grayscale
-    if len(image.shape) == 3:
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # Resize to 48x48 while keeping aspect ratio
-    image = cv2.resize(image, (48, 48), interpolation=cv2.INTER_AREA)
-
     transform = transforms.Compose([
-        transforms.ToPILImage(),
+        transforms.Grayscale(),
+        transforms.Resize((48, 48)),
         transforms.ToTensor(),
         transforms.Normalize((0.5,), (0.5,))
     ])
-
-    image_tensor = transform(image).unsqueeze(0)  # Add batch dimension
+    
+    image_pil = Image.fromarray(image)  # Convert cv2 image to PIL
+    image_tensor = transform(image_pil).unsqueeze(0)  # Add batch dimension
     return image_tensor
-
 
 # Predict class using OpenCV image
 def predict_from_cv2(model_path, cv2_image, device="cuda" if torch.cuda.is_available() else "cpu"):

@@ -1,7 +1,7 @@
 opencv-python-headless
 scikit-image
 opencv-python
-base64
+pybase64
 torch
 numpy
 pillow

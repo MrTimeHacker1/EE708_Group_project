@@ -137,7 +137,7 @@ emotion_labels = {
 }
 
 # Example Usage:
-#cv2_image = cv2.imread("sexy_boi.jpg", cv2.IMREAD_GRAYSCALE)
+#cv2_image = cv2.imread("image.jpg", cv2.IMREAD_GRAYSCALE)
 #class_id = predict_from_cv2("emotion_model.pth", cv2_image)
 #class_name = emotion_labels.get(class_id, "Unknown")
 

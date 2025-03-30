@@ -1,2 +1,5 @@
-opencv-python
+opencv-python-headless
 scikit-image
+opencv-python
+os
+base64

@@ -51,7 +51,7 @@ def main():
         with col2:
             st.write("\n")  # Add space to align button closer
             if st.button("Predict Emotion"):
-                model_path = "emotion_net.pth"
+                model_path = "emotion_model.pth"
                 class_id = predict_from_cv2(model_path, image)
                 emotion = emotion_labels.get(class_id, "Unknown")
                 st.success(f"Predicted Emotion: {emotion}")
